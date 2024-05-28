@@ -1,0 +1,37 @@
+{
+  "name": "telsiz",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build src/index.ts --outfile='D:\\javascript\\builds\\Telsiz\\lastest.ts' --sourcemap --target=bun",
+    "build-prisma": "bunx prisma generate --schema=./src/database-manager/prisma/schema.prisma",
+    "prisma-push": "cd src/database-manager && bunx prisma db push && cd ../../",
+    "build-run": "bun build src/index.ts --outfile='D:\\javascript\\builds\\Telsiz\\lastest.ts' --sourcemap --target=bun && bun run 'D:\\javascript\\builds\\Telsiz\\lastest.ts'",
+    "prisma-all": "bun run build-prisma && bun run prisma-push"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.14.0",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/sqlite3": "^3.1.11",
+    "@types/uuid": "^9.0.8",
+    "@types/validator": "^13.11.10",
+    "bun": "^1.1.8",
+    "discord.js": "^14.15.2",
+    "elysia": "latest",
+    "elysia-ip": "^1.0.5",
+    "fs": "^0.0.1-security",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^9.0.2",
+    "redis": "^4.6.14",
+    "sqlite3": "^5.1.7",
+    "uuid": "^9.0.1",
+    "validator": "^13.12.0",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "prisma": "^5.14.0"
+  },
+  "module": "src/index.js"
+}

@@ -1,0 +1,7 @@
+{
+	"token": "BOT TOKEN HERE",
+	"port": 5050,
+	"bloxlink_token":"BLOXLINK TOKEN HERE",
+	"server_token": "SERVER UUID HERE",
+	"application_id": "BOT ID HERE"
+}

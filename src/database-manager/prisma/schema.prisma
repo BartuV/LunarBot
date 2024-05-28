@@ -1,0 +1,34 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:../databases/data.db?journal_mode=wal"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model DiscordID {
+  uid       Int    @id @unique
+  discordID String @unique
+}
+
+model Channel {
+  id       String @id @unique
+  name     String
+  serverId String @unique
+  server   Server @relation(fields: [serverId], references: [id], onDelete: Restrict)
+}
+
+model Server {
+  id            String    @id @unique
+  channels      Channel[]
+  token_content String
+  token         Token     @relation(fields: [token_content], references: [id], onUpdate: Cascade)
+}
+
+model Token {
+  id           String   @id @unique
+  canUseTelsiz Boolean
+  canUseRoles  Boolean
+  Server       Server[]
+}
