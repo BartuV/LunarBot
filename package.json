@@ -20,7 +20,7 @@
     "discord.js": "^14.15.2",
     "elysia": "latest",
     "elysia-ip": "^1.0.5",
-    "fs": "^0.0.1-security",
+    "fs": "^0.0.2",
     "install": "^0.13.0",
     "jsonwebtoken": "^9.0.2",
     "redis": "^4.6.14",
